@@ -23,7 +23,7 @@ const getQuestions = async (amount) => {
   return data.results;
 };
 
-startQuiz = async () => {
+const startQuiz = async () => {
   resultElement1.innerHTML = "";
   let amount = 0;
   let validAmount = false;
@@ -48,7 +48,7 @@ startQuiz = async () => {
   showQuestion();
 };
 
-showQuestion = () => {
+const showQuestion = () => {
   console.log("showQuestion");
   const question = questions[currentQuestionIndex];
   questionElement.innerHTML = decodeURIComponent(question.question);
@@ -64,7 +64,7 @@ showQuestion = () => {
   }
 };
 
-checkAnswer = (li, answer) => {
+const checkAnswer = (li, answer) => {
   if (li.innerHTML === decodeURIComponent(answer)) {
     score++;
     lastAnswerStatus = "correct";
@@ -85,7 +85,7 @@ checkAnswer = (li, answer) => {
   showAnswerStatus();
 };
 
-showAnswerStatus = () => {
+const showAnswerStatus = () => {
   if (lastAnswerStatus === "correct") {
     resultElement.innerText = "Correct!";
   } else if (lastAnswerStatus === "incorrect") {
